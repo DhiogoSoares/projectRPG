@@ -1,10 +1,25 @@
+package com.example.projectFicha;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "atributo")
 public class Atributo {
 
     //Variable declarations
+    @Id
     private int id;
+
+    @Column (nullable = false)
     private String nome;
 
-    public Atributo(){
+    //Constructor
+    public Atributo(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
     //Getters and Setters
@@ -24,15 +39,10 @@ public class Atributo {
         this.nome = nome;
     }
 
-    //Constructor
-    public Atributo(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
 
     @Override
     public String toString() {
-        return "Atributo{" +
+        return "com.example.projectFicha.Atributo{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 '}';

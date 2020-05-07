@@ -1,11 +1,29 @@
+package com.example.projectFicha;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "grupo")
 public class Grupo {
 
     //Variable declarations
+    @Id
     private int id;
+
+    @Column(nullable = false)
     private String valor;
+
+    @Column(nullable = false)
     private String nome;
 
-    public Grupo(){
+    //Constructor
+    public Grupo(int id, String valor, String nome) {
+        this.id = id;
+        this.valor = valor;
+        this.nome = nome;
     }
 
     //Getters and Setters
@@ -33,16 +51,11 @@ public class Grupo {
         this.nome = nome;
     }
 
-    //Constructor
-    public Grupo(int id, String valor, String nome) {
-        this.id = id;
-        this.valor = valor;
-        this.nome = nome;
-    }
+
 
     @Override
     public String toString() {
-        return "Grupo{" +
+        return "com.example.projectFicha.Grupo{" +
                 "id=" + id +
                 ", valor='" + valor + '\'' +
                 ", nome='" + nome + '\'' +
