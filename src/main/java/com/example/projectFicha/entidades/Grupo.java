@@ -1,4 +1,4 @@
-package com.example.projectFicha;
+package com.example.projectFicha.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,7 +55,7 @@ public class Grupo {
 
     @Override
     public String toString() {
-        return "com.example.projectFicha.Grupo{" +
+        return "Grupo{" +
                 "id=" + id +
                 ", valor='" + valor + '\'' +
                 ", nome='" + nome + '\'' +

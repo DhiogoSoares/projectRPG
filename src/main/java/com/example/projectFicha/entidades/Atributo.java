@@ -1,4 +1,4 @@
-package com.example.projectFicha;
+package com.example.projectFicha.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,7 +42,7 @@ public class Atributo {
 
     @Override
     public String toString() {
-        return "com.example.projectFicha.Atributo{" +
+        return "Atributo{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 '}';

@@ -1,4 +1,4 @@
-package com.example.projectFicha;
+package com.example.projectFicha.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
