@@ -2,15 +2,10 @@ package com.example.projectFicha.repositorios;
 
 import com.example.projectFicha.entidades.Sistema;
 import com.example.projectFicha.entidades.Usuario;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface SistemaRepositorio {
+public interface SistemaRepositorio extends CrudRepository<Sistema, Integer> {
 
-    List<Sistema> buscarTodos();
-    Sistema buscarPorId(int id);
-
-    void cadastrar (Sistema sistema);
-    void alterar (Sistema sistema);
-    void removerPorId (int id);
 }
