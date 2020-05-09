@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin()
 public class UsuarioControlador {
-
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
-
 }
