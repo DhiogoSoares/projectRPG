@@ -16,7 +16,6 @@ import java.util.List;
 @RestController
 @CrossOrigin()
 public class UsuarioControlador {
-
     @Autowired
     UsuarioRepositorio repo;
 
@@ -52,6 +51,4 @@ public class UsuarioControlador {
     //@DeleteMapping(value = "/{id}")
     //@ResponseStatus(HttpStatus.OK)
     //public void deleteUsuario(@PathVariable int id)
-
-
 }

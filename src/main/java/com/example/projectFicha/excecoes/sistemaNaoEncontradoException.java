@@ -6,11 +6,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class SistemaNaoEncontradoException extends RuntimeException {
-    public SistemaNaoEncontradoException() {
+public class sistemaNaoEncontradoException extends RuntimeException {
+    public sistemaNaoEncontradoException() {
     }
 
-    public SistemaNaoEncontradoException (String message){
+    public sistemaNaoEncontradoException (String message){
         super(message);
     }
 }

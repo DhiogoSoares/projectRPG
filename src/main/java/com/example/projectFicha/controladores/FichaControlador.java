@@ -10,5 +10,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ficha")
 public class FichaControlador {
 
-    //TODO: TUDO
 }
