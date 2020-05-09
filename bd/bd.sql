@@ -85,7 +85,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`sistema` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `descricao` VARCHAR(200) NULL,
-  `nomeChar` VARCHAR(50) NOT NULL,
   `idGrupo` INT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `idGrupo`
@@ -103,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ficha` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idSistema` INT NOT NULL,
   `idUsuario` INT NOT NULL,
+	`nomeChar` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `idSistema`
     FOREIGN KEY (`idSistema`)
