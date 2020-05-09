@@ -1,6 +1,7 @@
 package com.example.projectFicha.entidades;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "usuario")
