@@ -13,7 +13,4 @@ public class UsuarioControlador {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
-
-    @RequestMapping()
-    public
 }
