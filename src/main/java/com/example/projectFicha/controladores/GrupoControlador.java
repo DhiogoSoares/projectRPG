@@ -5,6 +5,7 @@ import com.example.projectFicha.repositorios.GrupoRepositorio;
 import org.assertj.core.util.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,22 +20,18 @@ public class GrupoControlador {
         return service.findAll();
     }
 
-    @GetMapping(value = "/{id}")
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<Grupo> create(@RequestBody Grupo grupo){
+        return ResponseEntity.ok().body(service.save(grupo));
+    }
+
+    @PutMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public GrupoRepositorio findById(@PathVariable("id") int id){
         //return RestPreconditions.checkFound(service.findById(id));
 
         //CORRIGE ISSO DEPOIS
         return null;
     }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public int create(@RequestBody Grupo resource){
-        Preconditions.checkNotNull(resource);
-        //return service.create(resource);
-
-        //CREATE DEU ERRADO AQUI TAMBÉM
-        return Integer.parseInt(null);
-    }
-
 }
