@@ -16,6 +16,9 @@ import java.util.List;
 @RestController
 @CrossOrigin()
 public class UsuarioControlador {
+
+    //TODO: REVIEW
+
     @Autowired
     UsuarioRepositorio repo;
 
@@ -32,23 +35,24 @@ public class UsuarioControlador {
             return ResponseEntity.ok().body(repo.save(usuario));
     }
 
-    //TODO: UPDATE
-    //TODO: DELETE
-
-
-    //como fazer merge do usuario recebido revebido pelo request body no usuario pegado pelo id?
+    //como fazer merge do usuario recebido pelo request body no usuario pegado pelo id?
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void alterarUsuario(@PathVariable int id, @RequestBody Usuario usuario){
         if (!(repo.existsById(id))){
             throw new UsuarioNaoEncontradoException();
         } else {
-            usuario.setId(id);
-            em.merge(usuario);
+            em.merge(usuario); // necessario usar o merge ou posso usar o save??
         }
     }
 
-    //@DeleteMapping(value = "/{id}")
-    //@ResponseStatus(HttpStatus.OK)
-    //public void deleteUsuario(@PathVariable int id)
+    @DeleteMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteUsuario(@PathVariable int id, @RequestBody Usuario usuario){
+        if (!(repo.existsById(id))){
+            throw new UsuarioNaoEncontradoException();
+        } else {
+            repo.delete(usuario); // assim?S
+        }
+    }
 }
